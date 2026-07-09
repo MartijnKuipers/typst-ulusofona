@@ -1,4 +1,4 @@
-#import("../../../template/thesis.typ"): *
+#import "@preview/mkuipers-ulusofona:0.1.0": *
 
 = In-text Element Examples
 

@@ -1,4 +1,8 @@
-#import "../../template/thesis.typ": *
+// This is the ulthesis (thesis/dissertation) example.
+// Writing a lab/course report instead? See main-report.typ — delete
+// whichever of the two you don't need, and remove the unused sample
+// chapters (chapters/chapter_0*.typ vs. chapters/showcase.typ).
+#import "@preview/mkuipers-ulusofona:0.1.0": *
 
 #show: ulthesis.with(
   title: "Título do Trabalho",
@@ -12,10 +16,10 @@
   lang: "pt",
   toc-depth: 2,
   //department: "Departamento de Engenharia Informática e Sistemas de Informação",
-  //list-of-figures: false, 
+  //list-of-figures: false,
   //list-of-tables: false,
-  //list-of-acronyms: false, 
-  glossary-yaml-file: "Examples/Thesis/sample-glossary.yaml",  // Path is relative to the repo root (see readme) — set to none if you don't want a glossary
+  //list-of-acronyms: false,
+  glossary-data: yaml("glossary.yaml"),  // Set to none if you don't want a glossary
   //glossary-unused: true,      // Uncomment if you want all glossaries from the file to appear
   acknowledgements: [
     Para a mãe, o pai e o gato.
@@ -37,7 +41,7 @@
 
 // Aftermatter
 
-#my-bibliography( bibliography("sample.yaml"))
+#my-bibliography( bibliography("bibliography.yaml"))
 
 //#make-index(title: "Index")
 

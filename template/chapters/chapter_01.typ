@@ -1,4 +1,4 @@
-#import("../../../template/thesis.typ"): *
+#import "@preview/mkuipers-ulusofona:0.1.0": *
 
 #chapter("Sectioning Examples", l: "chap1")
 #index("Sectioning")

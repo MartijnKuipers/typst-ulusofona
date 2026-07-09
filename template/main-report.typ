@@ -1,4 +1,9 @@
-#import "../../template/report.typ": *
+// This is the ulreport (lab/course report) example.
+// Writing a thesis or dissertation instead? See main.typ — delete
+// whichever of the two you don't need (and rename this one to main.typ
+// if you keep it), and remove the unused sample chapters
+// (chapters/showcase.typ vs. chapters/chapter_0*.typ).
+#import "@preview/mkuipers-ulusofona:0.1.0": *
 
 #show: ulreport.with(
   title: "Relatório de Laboratório 3",
@@ -9,7 +14,7 @@
   group: "3",
   professors: ("Daniel Silveira",),
   //department: "Departamento de Engenharia Informática e Sistemas de Informação",
-  glossary-yaml-file: "Examples/Report/sample-glossary.yaml",  // Path is relative to the repo root (see readme) — set to none if you don't want a glossary
+  glossary-data: yaml("glossary.yaml"),  // Set to none if you don't want a glossary
   glossary-unused: true,      // Show every glossary entry, not just the ones used below
 )
 
@@ -19,7 +24,7 @@
 
 // Aftermatter
 
-#my-bibliography( bibliography("sample.yaml"))
+#my-bibliography( bibliography("bibliography.yaml"))
 
 #show: appendices.with("Anexos")
 

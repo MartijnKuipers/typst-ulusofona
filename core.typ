@@ -1,15 +1,13 @@
 /*
- * Universidade Lusófona Template — shared core
+ * mkuipers-ulusofona — internal engine
  *
- * Contains everything common to both ulthesis (thesis.typ) and ulreport
- * (report.typ): styles, states, outline/theorem machinery, and the
- * shared document engine (uldocument). Edit here to change both at once.
+ * Not part of the package's public API (see lib.typ for what's exported).
  * Based on the excellent orange-book template.
  *
  * Adapted by: Martijn Kuipers (martijn.kuipers@ulusofona.pt)
  */
 
-#import "./acrostiche/acrostiche.typ": *
+#import "@preview/acrostiche:0.7.0": *
 
 //#let normal-font = "Libertinus Serif"
 #let normal-font = "New Computer Modern"
@@ -742,14 +740,9 @@ figure(
   }
 }
 
-// Shared document engine
-//
-// Both `ulthesis` (thesis.typ) and `ulreport` (report.typ) are thin wrappers
-// around this function. It renders the cover page, copyright page, front
-// matter and body; the wrappers only fix the vocabulary (labels, defaults)
-// and the front-matter layout (which sections appear, and where the
-// glossary goes). Change page layout, numbering, or styling here and both
-// document types pick it up.
+// Document engine. `ulthesis` and `ulreport` (in lib.typ) are thin wrappers
+// around this function that fix document-type-specific vocabulary and
+// defaults. Not exported directly — see lib.typ for the public API.
 #let uldocument(
   title: "",
   type: "",
@@ -775,7 +768,7 @@ figure(
   list-of-figures: true,
   list-of-tables: true,
   list-of-acronyms: true,
-  glossary-yaml-file: none,
+  glossary-data: none,
   glossary-unused: false,
   glossary-position: "front",
   acknowledgements: none,
@@ -796,9 +789,8 @@ figure(
 
     set ref(supplement: (it)=>{lower(it.supplement)}) if lowercase-references
 
-    if (glossary-yaml-file != none) {
-      let glossary-pool = yaml("../" + glossary-yaml-file)
-      init-acronyms(glossary-pool)
+    if (glossary-data != none) {
+      init-acronyms(glossary-data)
     }
 
 
@@ -1101,7 +1093,7 @@ figure(
     print-index(title: translation("glossary"), sorted: "up", outlined: true, used-only: not(glossary-unused))
   }
 
-  if (glossary-yaml-file != none and list-of-acronyms and glossary-position == "front") {
+  if (glossary-data != none and list-of-acronyms and glossary-position == "front") {
     render-glossary()
     pagebreak(to: "odd", weak: true)
   }
@@ -1119,7 +1111,7 @@ figure(
 
   body
 
-  if (glossary-yaml-file != none and list-of-acronyms and glossary-position == "back") {
+  if (glossary-data != none and list-of-acronyms and glossary-position == "back") {
     counter(heading).update(0)
     render-glossary()
   }

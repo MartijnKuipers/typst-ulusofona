@@ -1,4 +1,4 @@
-#import("../../../template/thesis.typ"): *
+#import "@preview/mkuipers-ulusofona:0.1.0": *
 
 #chapter("Presenting Information and Results with a Long Chapter Title")
 
