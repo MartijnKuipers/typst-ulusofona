@@ -573,6 +573,9 @@ figure(
       return str(numbering("A.1", ..vals)) + "."
     },
   )
+  set figure(numbering: num =>
+    numbering("A.1", counter(heading).get().first(), num)
+  )
   doc
 }
 
@@ -753,12 +756,20 @@ figure(
   supervisors: (),
   supervisor-label: "Orientador",
   cosupervisor-label: "Co-orientador",
+  university-line: "Universidade Lusófona, Centro Universitário de Lisboa",
+  copyright-title: "Direitos de cópia",
+  copyright-holder-prefix: " de ",
+  copyright-text: none,
   course-unit: "",
   group: "",
   external: "",
   external-label: "Entidade Externa",
   department: "Departamento de Engenharia Informática e Sistemas de Informação",
   paper-size: "a4",
+  page-margin: (x: 3cm, bottom: 2.5cm, top: 3cm),
+  heading-spacing: 0em,
+  figure-spacing: 0em,
+  equation-spacing: 0em,
   logo: none,
   cover: image("cover_image.jpg"),
   image-index: none,
@@ -804,19 +815,45 @@ figure(
 
   set figure(gap: 1.3em)
 
+  // Banded ("zebra") tables: a rule above and below the header row, no
+  // vertical rules, and an alternating background tint on the body rows.
+  set table(
+    stroke: (x, y) => (
+      top: if y == 0 { 1pt + main-color } else { none },
+      bottom: if y == 0 { 0.8pt + main-color } else { none },
+    ),
+    fill: (x, y) => if y > 0 and calc.odd(y) { main-color.lighten(85%) } else { none },
+  )
+  show table.cell.where(y: 0): set text(weight: "bold")
+
+  // Tables get their caption above the content; figures (images) and
+  // code blocks keep the caption below.
+  show figure.where(kind: table): set figure.caption(position: top)
+  show figure.where(kind: image): set figure.caption(position: bottom)
+  show figure.where(kind: raw): set figure.caption(position: bottom)
+
   show figure: it => align(center)[
+    #if (it.placement == none){
+      v(1em + figure-spacing, weak: true)
+    }
     #it
     #if (it.placement == none){
-      v(2.6em, weak: true)
+      v(3.8em + figure-spacing, weak: true)
     }
   ]
+
+  show math.equation.where(block: true): it => {
+    v(equation-spacing, weak: true)
+    it
+    v(equation-spacing, weak: true)
+  }
 
   show terms: set par(first-line-indent: 0em)
 
   let front-matter-state = state("front-matter", true)
   set page(
     paper: paper-size,
-    margin: (x: 3cm, bottom: 2.5cm, top: 3cm),
+    margin: page-margin,
      header: context{
       set text(size: title5)
       let page_number = here().page()//counter(page).at(here()).first()
@@ -925,6 +962,7 @@ figure(
       //set par(justify: false)
       counter(figure.where(kind: image)).update(0)
       counter(figure.where(kind: table)).update(0)
+      counter(figure.where(kind: raw)).update(0)
       counter(math.equation).update(0)
       context{
         move(dx: 3cm, dy: -0.5cm, align(right + top, block(
@@ -932,7 +970,7 @@ figure(
             inset: (left:0em, rest: 1.6em),
             align(left, text(size: title1, it))
           )))
-        v(1.5cm, weak: true)
+        v(1.5cm + heading-spacing, weak: true)
       }
       part-change.update(x =>
         false
@@ -964,7 +1002,7 @@ figure(
         place(dx: -width - gap, num)
       }
       block(it)
-      v(space, weak: true)
+      v(space + heading-spacing, weak: true)
     }
     else {
       it
@@ -1036,7 +1074,7 @@ figure(
       #v(5.2em, weak: true)
       #text(size: title-main-4, department)
       #v(1em, weak: true)
-      #text(size: title-main-4, "Universidade Lusófona, Centro Universitário de Lisboa")
+      #text(size: title-main-4, university-line)
       #v(2em, weak: true)
       #text(size: title-main-4, weight: "bold", date)
     ]))
@@ -1049,15 +1087,15 @@ figure(
     set par(spacing: 2em)
     align(bottom, [
       #h(-0.3em)
-      #text(size: title2, weight: "bold", "Direitos de cópia")
+      #text(size: title2, weight: "bold", copyright-title)
       #linebreak()
       #box(height: 1cm)
       #h(-0.3em)
-      #text(size: normal-text, weight: "regular", title + ", Copyright " + sym.copyright + " de " + format_authors(authors, lang) + ", Universidade Lusófona")
+      #text(size: normal-text, weight: "regular", title + ", Copyright " + sym.copyright + copyright-holder-prefix + format_authors(authors, lang) + ", Universidade Lusófona")
       #linebreak()
       #box(height: 0.4cm)
       #h(-0.3em)
-      #text(size: normal-text, weight: "regular", "A Escola de Comunicação, Arquitectura, Artes e Tecnologias da Informação (ECATI) e a Universidade Lusófona (UL) têm o direito, perpétuo e sem limites geográficos, de arquivar e publicar " + copyright-phrase + " através de exemplares impressos reproduzidos em papel ou de forma digital, ou por qualquer outro meio conhecido ou que venha a ser inventado, e de a divulgar através de repositórios científicos e de admitir a sua cópia e distribuição com objectivos educacionais ou de investigação, não comerciais, desde que seja dado crédito ao autor e editor.")
+      #text(size: normal-text, weight: "regular", if copyright-text == none {"A Escola de Comunicação, Arquitectura, Artes e Tecnologias da Informação (ECATI) e a Universidade Lusófona (UL) têm o direito, perpétuo e sem limites geográficos, de arquivar e publicar " + copyright-phrase + " através de exemplares impressos reproduzidos em papel ou de forma digital, ou por qualquer outro meio conhecido ou que venha a ser inventado, e de a divulgar através de repositórios científicos e de admitir a sua cópia e distribuição com objectivos educacionais ou de investigação, não comerciais, desde que seja dado crédito ao autor e editor."} else {copyright-text})
     ])
 
   if (acknowledgements != none) {
@@ -1090,7 +1128,7 @@ figure(
   }
 
   let render-glossary() = {
-    print-index(title: translation("glossary"), sorted: "up", outlined: true, used-only: not(glossary-unused))
+    print-index(title: translation("glossary"), sorted: "up", outlined: true, used-only: not(glossary-unused), delimiter: "")
   }
 
   if (glossary-data != none and list-of-acronyms and glossary-position == "front") {
@@ -1101,7 +1139,7 @@ figure(
   set par(
     first-line-indent: 1em,
     justify: true,
-    spacing: 0.5em
+    spacing: 1em
   )
   set block(spacing: 1.2em)
   show link: set text(fill: main-color)

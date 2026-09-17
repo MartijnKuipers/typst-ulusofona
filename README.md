@@ -154,8 +154,20 @@ using the "Start from template" button.
 | `course-unit`          | Unidade Curricular name, shown on the cover page                |
 | `group`                | Group name/number, shown on the cover page                      |
 | `professors`           | List of course-unit professors (labeled "Professor de UC")      |
+| `supervisor-label`     | Label for `professors`, default: "Professor de UC"              |
+| `cosupervisor-label`   | Label for co-supervisors, default: "Professor de UC"             |
 | `external`             | Optional external entity (e.g., company)                       |
 | `department`           | The department, default: "Departamento de Engenharia Informática e Sistemas de Informação" |
+| `page-margin`          | Page margins, default: `(x: 3cm, bottom: 2.5cm, top: 3cm)`     |
+| `font-size`            | Base document font size, default: `10pt`                       |
+| `heading-spacing`      | Extra space added after every heading, on top of the current spacing; default: `0em` |
+| `figure-spacing`       | Extra space added above/below figures and tables, on top of the current spacing; default: `0em` |
+| `equation-spacing`     | Extra space added above/below block equations; default: `0em`  |
+| `university-line`      | Line under the department on the cover, default: "Universidade Lusófona, Centro Universitário de Lisboa" |
+| `copyright-title`      | Heading of the copyright page, default: "Direitos de cópia"    |
+| `copyright-holder-prefix` | Text between "Copyright ©" and the author names, default: " de " |
+| `copyright-text`       | Full override of the copyright page body text; `none` uses the default UL wording |
+| `copyright-phrase`     | Phrase inserted into the default copyright text (e.g., "este relatório"); ignored if `copyright-text` is set |
 | `glossary-data`        | Loaded glossary data, e.g. `yaml("glossary.yaml")`; printed at the end of the document, after the bibliography and appendices; set to `none` to omit |
 | `list-of-acronyms`     | Show glossary/acronyms section                                 |
 | `lang`                 | Document language: `"pt"` or `"en"` (default: `"pt"`)          |
