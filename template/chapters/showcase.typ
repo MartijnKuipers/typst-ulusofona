@@ -1,4 +1,4 @@
-#import "@preview/mkuipers-ulusofona:0.1.0": *
+#import "@preview/mkuipers-ulusofona:0.2.1": *
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, node, edge
 
 #chapter("Resultados e Análise")

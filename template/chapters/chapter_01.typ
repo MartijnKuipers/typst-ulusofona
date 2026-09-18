@@ -1,4 +1,4 @@
-#import "@preview/mkuipers-ulusofona:0.1.0": *
+#import "@preview/mkuipers-ulusofona:0.2.1": *
 
 #chapter("Sectioning Examples", l: "chap1")
 #index("Sectioning")
