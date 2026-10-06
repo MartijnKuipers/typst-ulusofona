@@ -1,7 +1,7 @@
 // Example TFC (Trabalho Final de Curso) report, pre-filled with the
 // official DEISI guidance text. Replace the guidance in each chapter
 // with your own content, and delete the sections that do not apply.
-#import "@preview/mkuipers-ulusofona:0.2.1": *
+#import "@preview/mkuipers-ulusofona:0.3.0": *
 
 #show: ulthesis.with(
   title: "Título do Trabalho",
