@@ -36,7 +36,7 @@ The cover-page background (`cover_image.jpg`) reproduces Universidade
 Lusófona's own branding and is © Universidade Lusófona. It is included here
 so the template can be used freely to write documents for the university;
 it is not licensed for other uses. The Lisbon illustration used in the
-example chapters (`chapters/images/lisbon.jpg`) is an AI-generated,
+example chapters (`examples/*/chapters/images/lisbon.jpg`) is an AI-generated,
 royalty-free placeholder image used only to demonstrate figure/image
 inclusion.
 
@@ -48,22 +48,17 @@ typst init @preview/mkuipers-ulusofona:0.3.0 my-document
 
 This creates a new folder `my-document` with:
 
-- `main.typ` — a working `ulthesis` example (the previewed/default file).
-- `main-report.typ` — a working `ulreport` example, with its own sample
-  chapter (`chapters/showcase.typ`, demonstrating formulas, images,
-  tables, and a block diagram).
-- `main-tfc.typ` — an example TFC (Trabalho Final de Curso) report,
-  an `ulthesis` pre-filled with the official DEISI guidance text, with its
-  own chapters (`chapters/capitulo_0*.typ`), `bibliography-tfc.yaml` and
-  `glossary-tfc.yaml`.
-- `chapters/` — sample chapters for all of the above.
-- `bibliography.yaml` and `glossary.yaml` — sample data for the thesis and
-  report examples.
+- `main.typ` — the main document: a TFC (Trabalho Final de Curso) report,
+  an `ulthesis` pre-filled with the official DEISI guidance text.
+- `chapters/capitulo_0*.typ`, `bibliography.yaml`, `glossary.yaml` — its
+  chapters and sample data.
+- `examples/thesis/` — a generic `ulthesis` thesis/dissertation example.
+- `examples/report/` — a `ulreport` lab/course report example (formulas,
+  images, tables, and a block diagram).
 
-Keep the file for the document type you need and delete (or just ignore)
-the others — e.g. for a report, delete `main.typ`, rename `main-report.typ`
-to `main.typ`, and remove the unused `chapters/chapter_0*.typ` files; for a
-TFC, rename `main-tfc.typ` to `main.typ` and remove the thesis chapters.
+Each example folder is self-contained. To start from one instead of the TFC,
+copy its contents over the template root (replacing `main.typ`, `chapters/`
+and the YAML files), then delete `examples/` if you no longer need it.
 Compile right away:
 
 ```sh

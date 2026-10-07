@@ -1,8 +1,7 @@
 // This is the ulreport (lab/course report) example.
-// Writing a thesis or dissertation instead? See main.typ — delete
-// whichever of the two you don't need (and rename this one to main.typ
-// if you keep it), and remove the unused sample chapters
-// (chapters/showcase.typ vs. chapters/chapter_0*.typ).
+// For the TFC report see ../../main.typ, and for a generic thesis see
+// ../thesis/main.typ. To start from this one, copy this folder's contents
+// over the template root.
 #import "@preview/mkuipers-ulusofona:0.3.0": *
 
 #show: ulreport.with(

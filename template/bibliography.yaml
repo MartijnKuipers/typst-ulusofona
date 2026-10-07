@@ -1,26 +1,26 @@
-# Bibliography in Hayagriva YAML style
-# Documentation: https://github.com/typst/hayagriva/blob/main/docs/file-format.md
-Smith:2021qr:
+DEISI24:
+  type: web
+  title: Regulamento de Trabalho Final de Curso
+  author: DEISI
+  date: 2024-10
+DEISI24b:
+  type: web
+  title: DEISI
+  author: DEISI
+  url: http://www.deisi.ulusofona.pt
+  date: 2024-10
+TaWe20:
   type: book
-  title: Book Title
+  title: Computer Networks
   author:
-    - Smith, J. M.
-    - Jones, A. B.
-  publisher: Publisher
-  year: 2021
-  edition: 7
-
-Smith:2022jd:
-  type: article
-  title: Article Title
-  author:
-    - Jones, A. B.
-    - Smith, J. M.
-  journal: Journal title
-  year: 2022
-  volume: 13
-  number: 52
-  pages: 123–456
-  month: 3
-  publisher: Publisher
-  doi: 10.1038/s41586-021-03616-x
+    - Tanenbaum, Andrew
+    - Wetherall, David
+  publisher: Prentice Hall
+  edition: 6
+  date: 2020
+ULHT21:
+  type: web
+  title: Universidade Lusófona de Humanidades e Tecnologias
+  author: Universidade Lusófona de Humanidades e Tecnologia
+  url: http://www.ulusofona.pt
+  date: 2024-10

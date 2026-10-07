@@ -1,60 +1,56 @@
-// This is the ulthesis (thesis/dissertation) example.
-// Writing a lab/course report instead? See main-report.typ — delete
-// whichever of the two you don't need, and remove the unused sample
-// chapters (chapters/chapter_0*.typ vs. chapters/showcase.typ).
+// Example TFC (Trabalho Final de Curso) report, pre-filled with the
+// official DEISI guidance text. Replace the guidance in each chapter
+// (chapters/capitulo_0*.typ) with your own content, and delete the
+// sections that do not apply. Other examples (generic thesis, lab
+// report) are in examples/.
 #import "@preview/mkuipers-ulusofona:0.3.0": *
 
 #show: ulthesis.with(
   title: "Título do Trabalho",
   type: "Trabalho Final de Curso",
-  subtype: "1ª Entrega Intercalar",
-  subtitle: "A Practical Guide",
-  date: "July 2026",
-  authors: ((name:"Goro Akechi", number: "p8094", course: "LIG"), (name: "Flavio Barisi", number: "p8095", course: "LIG")),
-  supervisors: ("Daniel Silveira", "Martijn Kuipers"),
-  external: "João Craveiro",
+  subtype: "Relatório Intercalar 1º Semestre",
+  date: "Janeiro 2026",
+  authors: (
+    (name: "Nome do Aluno", number: "p0000", course: "LEI"),
+    (name: "Nome do Aluno", number: "p0000", course: "LEI"),
+  ),
+  supervisors: ("Nome do Orientador", "Nome do Co-orientador"),
+  external: "Nome da Entidade Externa",  // Remove if there is no external entity
   lang: "pt",
   toc-depth: 2,
-  //department: "Departamento de Engenharia Informática e Sistemas de Informação",
-  //list-of-figures: false,
-  //list-of-tables: false,
-  //list-of-acronyms: false,
-  glossary-data: yaml("glossary.yaml"),  // Set to none if you don't want a glossary
-  //glossary-unused: true,      // Uncomment if you want all glossaries from the file to appear
+  glossary-data: yaml("glossary.yaml"),
+  glossary-unused: true,  // Show every glossary entry; remove to list only the ones used
   acknowledgements: [
-    Para a mãe, o pai e o gato.
+    Agradecimentos.
   ],
   abstract-pt: [
-    Um template para universidade
+    O resumo tem no máximo uma página. Pode ter como base a descrição da
+    proposta de TFC disponível na plataforma.
+
+    *Palavras-chave:* palavra 1, palavra 2, palavra 3
   ],
   abstract-en: [
-    A template for the university
-  ]
+    Abstract in English.
+
+    *Keywords:* keyword 1, keyword 2, keyword 3
+  ],
 )
 
 // Chapters
-#include("chapters/chapter_01.typ")
-#include("chapters/chapter_02.typ")
-#include("chapters/chapter_03.typ")
-#include("chapters/chapter_04.typ")
-
+#include("chapters/capitulo_01.typ")
+#include("chapters/capitulo_02.typ")
+#include("chapters/capitulo_03.typ")
+#include("chapters/capitulo_04.typ")
+#include("chapters/capitulo_05.typ")
+#include("chapters/capitulo_06.typ")
+#include("chapters/capitulo_07.typ")
+#include("chapters/capitulo_08.typ")
 
 // Aftermatter
+#my-bibliography(bibliography("bibliography.yaml"))
 
-#my-bibliography( bibliography("bibliography.yaml"))
+#show: appendices.with("Anexo")
 
-//#make-index(title: "Index")
+#chapter("Guião de Testes")
 
-
-#show: appendices.with("Appendices")
-
-#chapter("Appendix Chapter Title")
-
-== Appendix Section Title
-
-#lorem(50)
-#chapter("Appendix Chapter Title")
-
-== Appendix Section Title
-
-#lorem(50)
+Incluir aqui o guião detalhado de testes, com descrição de cenários e resultados.
