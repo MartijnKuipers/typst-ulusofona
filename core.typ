@@ -943,6 +943,17 @@ figure(
     it
   }
 
+  // Chapter numbers are displayed as "1." in headings; drop the trailing dot
+  // when referring to a chapter in running text ("Capítulo 1", not "Capítulo 1.").
+  show ref: it => {
+    let el = it.element
+    if el != none and el.func() == heading and el.level == 1 and el.numbering != none and (it.supplement == auto or lowercase-references) {
+      let num = str(numbering(el.numbering, ..counter(heading).at(el.location()))).trim(".", at: end)
+      let sup = if lowercase-references { lower(el.supplement) } else { el.supplement }
+      link(el.location(), [#sup #num])
+    } else { it }
+  }
+
   set heading(
     hanging-indent: 0pt,
     numbering: (..nums) => {
