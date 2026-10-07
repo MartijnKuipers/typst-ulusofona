@@ -36,7 +36,7 @@ The cover-page background (`cover_image.jpg`) reproduces Universidade
 Lusófona's own branding and is © Universidade Lusófona. It is included here
 so the template can be used freely to write documents for the university;
 it is not licensed for other uses. The Lisbon illustration used in the
-example chapters (`examples/*/chapters/images/lisbon.jpg`) is an AI-generated,
+example chapters (`chapters/images/lisbon.jpg` and `examples/report/chapters/images/lisbon.jpg`) is an AI-generated,
 royalty-free placeholder image used only to demonstrate figure/image
 inclusion.
 
@@ -51,7 +51,10 @@ This creates a new folder `my-document` with:
 - `main.typ` — the main document: a TFC (Trabalho Final de Curso) report,
   an `ulthesis` pre-filled with the official DEISI guidance text.
 - `chapters/capitulo_0*.typ`, `bibliography.yaml`, `glossary.yaml` — its
-  chapters and sample data.
+  chapters and sample data. Placeholder text is shown on a grey background
+  (`#guidance[...]`); replace it with your own content.
+- `chapters/anexo_exemplos.typ` — an annex with examples of lists, figures,
+  tables and references; delete it before submitting.
 - `examples/report/` — a `ulreport` lab/course report example. Chapters 1–4
   demonstrate the template's features (sectioning, in-text elements,
   mathematics, tables and figures) and chapter 5 is a worked results

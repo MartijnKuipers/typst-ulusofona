@@ -14,6 +14,17 @@
 #import "core.typ": chapter, part, appendices, my-bibliography, make-index, thmref, index, mathcal, scr, theorem, definition, corollary, proposition, notation, exercise, example, problem, vocabulary, remark
 #import "@preview/acrostiche:0.7.0": *
 
+// Marks template placeholder/guidance text with a grey background so it is
+// easy to spot and replace. Remove the wrapper (or the whole block) once the
+// text has been replaced with your own.
+#let guidance(body) = block(
+  width: 100%,
+  fill: luma(225),
+  inset: (x: 8pt, y: 6pt),
+  radius: 2pt,
+  body,
+)
+
 #let ulthesis(
   title: "",
   type: "",

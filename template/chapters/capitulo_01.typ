@@ -2,28 +2,37 @@
 
 #chapter("Introdução", l: "intro")
 
+#guidance[
 Neste capítulo pretende-se que seja descrito o enquadramento prático e a envolvente do problema em análise por formulação detalhada do #emph[case study] a abordar no TFC.
 
 Deverá ser demonstrado, de forma clara, que o problema em estudo resulta de circunstância reais e a solução a desenvolver representa um passo no sentido da solução desse mesmo problema
 
 Valorizam-se os trabalhos cujo enquadramento seja fundamentado cientificamente ou suportado por terceiros. No presente contexto, entenda-se ‘terceiros' como elementos externos ao desenvolvimento da solução, podendo incluir, sem se limitar, possíveis utilizadores da solução a desenvolver, eventuais clientes duma versão comercial da solução.
+]
 
 == Enquadramento
 
+#guidance[
 _Exemplo de citação: este trabalho enquadra-se no regulamento do TFC @DEISI24, na Universidade Lusófona @ULHT21 e no departamento @DEISI24b; ver também @TaWe20. Apague esta nota._
 
 Serve para situar o tema no contexto mais amplo, mostrando sua relevância na área de estudo. Apresentação de cada um dos conceitos (o que é) em torno dos quais o trabalho versa, incluindo referências bibliográficas relevantes.
+]
 
 == Motivação e Identificação do Problema
+#guidance[
 Explicar as motivações que levam a propor o presente trabalho, evidenciando por que o tema é importante ou interessante, podendo incluir motivações pessoais ou sociais para a pesquisa. Definir o problema que que se pretende resolver ou explorar.
+]
 
 == Objetivos
+#guidance[
 Apresentar os principais objetivos, tanto os gerais quanto os específicos, que guiam o trabalho.
+]
 
 == Estrutura do Documento
+#guidance[
 Apresenta uma visão geral da organização do documento, listando o que se fala em cada capítulo. No presente relatório está organizado da seguinte forma:
 
-- Na Secção @pertinencia é apresentada a análise da viabilidade e pertinência do trabalho desenvolvido.
+- No @pertinencia é apresentada a análise da viabilidade e pertinência do trabalho desenvolvido.
 
 - Na Secção ...
 
@@ -32,6 +41,7 @@ Apresenta uma visão geral da organização do documento, listando o que se fala
 - No Anexo ...
 
 O @tab-entregas é indicativo de entregáveis para cada momento de avaliação, assumindo abordagem sequencial do desenvolvimento de TFC. Podendo ser adoptadas outras abordagens metodológicas (e.g.: metodologias ágeis), serão aceites outras organizações de entregas. Deve-se, no entanto, observar duas condições: (i) a 1ª entrega deverá manter os conteúdos indicados no quadro, por forma a permitir ao júri avaliar a pertinência do tema e a taxa de esforço esperada; (ii) a organização de conteúdos em cada entrega deve ter atenção aos critérios de avaliação de modo a garantir a uniformidade da avaliação
+]
 
 #figure(
   align(center)[#set text(size: 7pt, hyphenate: false)
