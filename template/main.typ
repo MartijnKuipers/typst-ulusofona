@@ -3,7 +3,7 @@
 // (chapters/capitulo_0*.typ) with your own content, and delete the
 // sections that do not apply. Other examples (generic thesis, lab
 // report) are in examples/.
-#import "@preview/mkuipers-ulusofona:0.3.0": *
+#import "@preview/mkuipers-ulusofona:0.3.2": *
 
 #show: ulthesis.with(
   title: "Título do Trabalho",

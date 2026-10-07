@@ -1,4 +1,4 @@
-#import "@preview/mkuipers-ulusofona:0.3.0": *
+#import "@preview/mkuipers-ulusofona:0.3.2": *
 
 #chapter("Presenting Information and Results with a Long Chapter Title")
 

@@ -3,7 +3,7 @@
 // tables and figures); chapter 5 is a worked results section with formulas,
 // images, tables and a block diagram. For the TFC report see ../../main.typ.
 // To start from this one, copy this folder's contents over the template root.
-#import "@preview/mkuipers-ulusofona:0.3.0": *
+#import "@preview/mkuipers-ulusofona:0.3.2": *
 
 #show: ulreport.with(
   title: "Relatório de Laboratório 3",
@@ -12,8 +12,8 @@
   authors: ((name:"Goro Akechi", number: "p8094", course: "LIG"), (name: "Flavio Barisi", number: "p8095", course: "LIG")),
   course-unit: "Sistemas Operativos",
   group: "3",
-  professors: ("Daniel Silveira",),
-  //department: "Departamento de Engenharia Informática e Sistemas de Informação",
+  professors: ("Martijn Kuipers",),
+  department: "Departamento de Engenharia Informática e Sistemas de Informação",
   glossary-data: yaml("glossary.yaml"),  // Set to none if you don't want a glossary
   glossary-unused: true,      // Show every glossary entry, not just the ones used below
 )
