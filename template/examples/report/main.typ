@@ -1,7 +1,8 @@
-// This is the ulreport (lab/course report) example.
-// For the TFC report see ../../main.typ, and for a generic thesis see
-// ../thesis/main.typ. To start from this one, copy this folder's contents
-// over the template root.
+// This is the ulreport (lab/course report) example. Chapters 1-4 show how
+// to use the template's features (sectioning, in-text elements, maths,
+// tables and figures); chapter 5 is a worked results section with formulas,
+// images, tables and a block diagram. For the TFC report see ../../main.typ.
+// To start from this one, copy this folder's contents over the template root.
 #import "@preview/mkuipers-ulusofona:0.3.0": *
 
 #show: ulreport.with(
@@ -18,7 +19,11 @@
 )
 
 // Chapters
-#include("chapters/showcase.typ")
+#include("chapters/chapter_01.typ")
+#include("chapters/chapter_02.typ")
+#include("chapters/chapter_03.typ")
+#include("chapters/chapter_04.typ")
+#include("chapters/chapter_05.typ")
 
 
 // Aftermatter

@@ -52,11 +52,12 @@ This creates a new folder `my-document` with:
   an `ulthesis` pre-filled with the official DEISI guidance text.
 - `chapters/capitulo_0*.typ`, `bibliography.yaml`, `glossary.yaml` — its
   chapters and sample data.
-- `examples/thesis/` — a generic `ulthesis` thesis/dissertation example.
-- `examples/report/` — a `ulreport` lab/course report example (formulas,
-  images, tables, and a block diagram).
+- `examples/report/` — a `ulreport` lab/course report example. Chapters 1–4
+  demonstrate the template's features (sectioning, in-text elements,
+  mathematics, tables and figures) and chapter 5 is a worked results
+  section with formulas, images, tables and a block diagram.
 
-Each example folder is self-contained. To start from one instead of the TFC,
+The example folder is self-contained. To start a report instead of the TFC,
 copy its contents over the template root (replacing `main.typ`, `chapters/`
 and the YAML files), then delete `examples/` if you no longer need it.
 Compile right away:
