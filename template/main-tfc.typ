@@ -1,6 +1,8 @@
 // Example TFC (Trabalho Final de Curso) report, pre-filled with the
 // official DEISI guidance text. Replace the guidance in each chapter
-// with your own content, and delete the sections that do not apply.
+// (chapters/capitulo_0*.typ) with your own content, and delete the
+// sections that do not apply. To use it, delete main.typ and rename this
+// file to main.typ.
 #import "@preview/mkuipers-ulusofona:0.3.0": *
 
 #show: ulthesis.with(
@@ -16,7 +18,7 @@
   external: "Nome da Entidade Externa",  // Remove if there is no external entity
   lang: "pt",
   toc-depth: 2,
-  glossary-data: yaml("glossary.yaml"),
+  glossary-data: yaml("glossary-tfc.yaml"),
   glossary-unused: true,  // Show every glossary entry; remove to list only the ones used
   acknowledgements: [
     Agradecimentos.
@@ -45,7 +47,7 @@
 #include("chapters/capitulo_08.typ")
 
 // Aftermatter
-#my-bibliography(bibliography("bibliography.yaml"))
+#my-bibliography(bibliography("bibliography-tfc.yaml"))
 
 #show: appendices.with("Anexo")
 

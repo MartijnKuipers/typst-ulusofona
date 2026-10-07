@@ -52,12 +52,18 @@ This creates a new folder `my-document` with:
 - `main-report.typ` — a working `ulreport` example, with its own sample
   chapter (`chapters/showcase.typ`, demonstrating formulas, images,
   tables, and a block diagram).
-- `chapters/` — sample chapters for both.
-- `bibliography.yaml` and `glossary.yaml` — sample data for both.
+- `main-tfc.typ` — an example TFC (Trabalho Final de Curso) report,
+  an `ulthesis` pre-filled with the official DEISI guidance text, with its
+  own chapters (`chapters/capitulo_0*.typ`), `bibliography-tfc.yaml` and
+  `glossary-tfc.yaml`.
+- `chapters/` — sample chapters for all of the above.
+- `bibliography.yaml` and `glossary.yaml` — sample data for the thesis and
+  report examples.
 
 Keep the file for the document type you need and delete (or just ignore)
-the other — e.g. for a report, delete `main.typ`, rename `main-report.typ`
-to `main.typ`, and remove the unused `chapters/chapter_0*.typ` files.
+the others — e.g. for a report, delete `main.typ`, rename `main-report.typ`
+to `main.typ`, and remove the unused `chapters/chapter_0*.typ` files; for a
+TFC, rename `main-tfc.typ` to `main.typ` and remove the thesis chapters.
 Compile right away:
 
 ```sh
