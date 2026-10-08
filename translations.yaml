@@ -13,6 +13,12 @@ abstract_en:
 abstract_pt:
   en: "Resumo  (Portuguese)"
   pt: "Resumo" 
+keywords_en:
+  en: "Keywords"
+  pt: "Keywords"
+keywords_pt:
+  en: "Palavras-chave"
+  pt: "Palavras-chave"
 glossary:
   en: "Glossary"
   pt: "Glossário"

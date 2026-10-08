@@ -1,4 +1,4 @@
-#import "@preview/mkuipers-ulusofona:0.3.2": *
+#import "@preview/mkuipers-ulusofona:0.3.3": *
 
 = In-text Element Examples
 

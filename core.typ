@@ -785,6 +785,8 @@ figure(
   acknowledgements: none,
   abstract-en: none,
   abstract-pt: none,
+  keywords-en: (),
+  keywords-pt: (),
   copyright-phrase: "esta dissertação",
   supplement-chapter: auto,
   supplement-part: auto,
@@ -1116,6 +1118,10 @@ figure(
       #text(size: normal-text, weight: "regular", if copyright-text == none {"A Escola de Comunicação, Arquitectura, Artes e Tecnologias da Informação (ECATI) e a Universidade Lusófona (UL) têm o direito, perpétuo e sem limites geográficos, de arquivar e publicar " + copyright-phrase + " através de exemplares impressos reproduzidos em papel ou de forma digital, ou por qualquer outro meio conhecido ou que venha a ser inventado, e de a divulgar através de repositórios científicos e de admitir a sua cópia e distribuição com objectivos educacionais ou de investigação, não comerciais, desde que seja dado crédito ao autor e editor."} else {copyright-text})
     ])
 
+  let keywords-block(words, key) = if words.len() > 0 {
+    par(first-line-indent: 0pt, [*#translation(key):* #words.join(", ")])
+  }
+
   if (acknowledgements != none) {
     heading(level: 1, numbering: none, outlined: true, translation("acknowledgements"))
     [#acknowledgements]
@@ -1124,16 +1130,19 @@ figure(
   if (lang == "pt" and abstract-pt != none) {
     heading(level: 1, numbering: none, outlined: true, translation("abstract_pt"))
     [#abstract-pt]
+    keywords-block(keywords-pt, "keywords_pt")
   }
 
   if (abstract-en != none) {
     heading(level: 1, numbering: none, outlined: true, translation("abstract_en"))
     [#abstract-en]
+    keywords-block(keywords-en, "keywords_en")
   }
 
   if (lang == "en" and abstract-pt != none) {
     heading(level: 1, numbering: none, outlined: true, translation("abstract_pt"))
     [#abstract-pt]
+    keywords-block(keywords-pt, "keywords_pt")
   }
 
   my-outline(front-matter-state, appendix-state, appendix-state-hide-parent, part-state, part-location,part-change,part-counter, main-color, lang, textSize1: outline-part, textSize2: outline-heading1, textSize3: outline-heading2, textSize4: outline-heading3, depth: toc-depth)

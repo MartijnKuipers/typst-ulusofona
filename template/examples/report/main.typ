@@ -3,7 +3,7 @@
 // tables and figures); chapter 5 is a worked results section with formulas,
 // images, tables and a block diagram. For the TFC report see ../../main.typ.
 // To start from this one, copy this folder's contents over the template root.
-#import "@preview/mkuipers-ulusofona:0.3.2": *
+#import "@preview/mkuipers-ulusofona:0.3.3": *
 
 #show: ulreport.with(
   title: "Relatório de Laboratório 3",

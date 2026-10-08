@@ -5,7 +5,7 @@
 // The last annex (chapters/anexo_exemplos.typ) shows how to write lists,
 // figures, tables and references; delete it before submitting.
 // Other examples (lab report) are in examples/.
-#import "@preview/mkuipers-ulusofona:0.3.2": *
+#import "@preview/mkuipers-ulusofona:0.3.3": *
 
 #show: ulthesis.with(
   title: "Título do Trabalho",
@@ -29,17 +29,15 @@
     #guidance[
       O resumo tem no máximo uma página. Pode ter como base a descrição da
       proposta de TFC disponível na plataforma.
-
-      *Palavras-chave:* palavra 1, palavra 2, palavra 3
     ]
   ],
+  keywords-pt: ("palavra 1", "palavra 2", "palavra 3"),  // Optional
   abstract-en: [
     #guidance[
       Abstract in English.
-
-      *Keywords:* keyword 1, keyword 2, keyword 3
     ]
   ],
+  keywords-en: ("keyword 1", "keyword 2", "keyword 3"),  // Optional
 )
 
 // Chapters

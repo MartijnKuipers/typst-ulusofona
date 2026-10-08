@@ -43,7 +43,7 @@ inclusion.
 ## Getting started
 
 ```sh
-typst init @preview/mkuipers-ulusofona:0.3.2 my-document
+typst init @preview/mkuipers-ulusofona:0.3.3 my-document
 ```
 
 This creates a new folder `my-document` with:
@@ -77,7 +77,7 @@ using the "Start from template" button.
 ## Usage: `ulthesis`
 
 ```typ
-#import "@preview/mkuipers-ulusofona:0.3.2": *
+#import "@preview/mkuipers-ulusofona:0.3.3": *
 
 #show: ulthesis.with(
   title: "My Thesis Title",
@@ -121,6 +121,8 @@ using the "Start from template" button.
 | `acknowledgements`     | Acknowledgements content                                       |
 | `abstract-en`          | Abstract (English)                                             |
 | `abstract-pt`          | Resumo (Portuguese)                                            |
+| `keywords-en`          | Optional array of English keywords, shown below the abstract   |
+| `keywords-pt`          | Optional array of Portuguese keywords, shown below the resumo  |
 | `glossary-data`        | Loaded glossary data, e.g. `yaml("glossary.yaml")`; set to `none` to omit |
 | `list-of-figures`      | Show list of figures (default: `true`)                          |
 | `list-of-tables`       | Show list of tables (default: `true`)                           |
@@ -130,7 +132,7 @@ using the "Start from template" button.
 ## Usage: `ulreport`
 
 ```typ
-#import "@preview/mkuipers-ulusofona:0.3.2": *
+#import "@preview/mkuipers-ulusofona:0.3.3": *
 
 #show: ulreport.with(
   title: "Relatório de Laboratório 3",
